@@ -2,9 +2,10 @@
   (:require [clojure.string :as s]))
 
 (defn upper-case? [characters] 
-  (if (empty? (re-seq #"[a-zA-Z]" characters)) false
+  (if (empty? (re-seq #"[a-zA-Z]" characters)) 
+    false
   	(every? #(Character/isUpperCase %) 
-		(apply str (re-seq #"[a-zA-Z]+" characters)))))
+		  (apply str (re-seq #"[a-zA-Z]+" characters)))))
 
 (defn response-for [phrase] 
   (cond 
